@@ -1,11 +1,31 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const app = express();
 const fs = require('fs');
-var port = process.env.PORT || 8000;
+const path = require('path');
+const bodyParser = require("body-parser");
+const port = process.env.PORT || 8000;
 
-//### Challenge 2:
-app.get("/", function(req, res) {
-  res.send("hello");
+//middleware goes here
+app.use(express.static('public'));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
+app.use(bodyParser.json());
+
+app.get("", function(req, res) {
+  res.sendfile("index.html", {root: './public'});
+});
+
+app.post("/newusr/", function(req, res) {
+  let usrInput = req.body;
+  let readArr = fs.readFileSync("./storage.json", "utf8");
+  let newArr = JSON.parse(readArr);
+
+  newArr.push(usrInput);
+
+  fs.writeFileSync('./storage.json', JSON.stringify(newArr));
+
+  res.send('The user was appended to file!');
 });
 
 app.use(function(req, res) {

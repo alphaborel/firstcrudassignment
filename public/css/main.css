@@ -1,0 +1,9 @@
+
+h1 {
+  font-size: 2em;
+  text-align: center;
+}
+/* I had to add this because the labels were overlapping the text fields ??*/
+input {
+  margin-top: 20px !important;
+}
