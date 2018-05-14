@@ -8,11 +8,11 @@ input {
   margin-top: 20px !important;
 }
 textarea {
-  height: 177px;
+  height: 150px;
 }
 button {
   margin-top: 25px;
 }
-#searchAllBtn {
-  margin-left: 2%;
+#searchBtn {
+  margin-right: 5%;
 }

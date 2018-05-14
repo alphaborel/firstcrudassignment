@@ -5,7 +5,6 @@
 
     <head>
       <title>CRUD Page</title>
-      <!--<link type="text/css" rel="stylesheet" href="/css/reset.css">-->
       <!--Import Google Icon Font-->
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <!--Import materialize.css-->
@@ -19,61 +18,106 @@
     <div class="container">
       <h1>Welcome to CRUD!</h1>
 
-      <div class="row">
-      <div class="col m12 l6">
-        <form action="#" onsubmit="submitNewUsr();return false">
-        <fieldset>
-        <legend>Add new user</legend>
+    <div class="row">
+      <div class="col s12 m6">
+          <form action="#" onsubmit="submitNewUsr();return false">
+            <fieldset>
+              <legend>Add New User</legend>
 
-          <div class="input-field active">
-            <input type="text" name="username" id="username" required>
-            <label for="username">Enter username:</label>
-          </div>
+              <div class="input-field active">
+                <input type="text" name="username" id="username" required>
+                <label for="username">Enter username*:</label>
+              </div>
 
-          <div class="input-field">
-            <input type="email" name="email" id="email" required>
-            <label for="">Enter email:</label>
-          </div>
+              <div class="input-field">
+                <input type="email" name="email" id="email" required>
+                <label for="">Enter email*:</label>
+              </div>
 
-          <div class="input-field">
-            <input type="text" name="state" id="state" maxlength="2" required>
-            <label for="">Enter State Abbreviation:</label>
-          </div>
+              <div class="input-field">
+                <input type="text" name="state" id="state" maxlength="2" required>
+                <label for="">Enter State Abbreviation*:</label>
+              </div>
 
-          <button class="btn waves-effect waves-light teal darken-2" id="enterUsr" type="submit" name="action">Submit
-          <i class="material-icons right">send</i>
-          </button>
-          </fieldset>
-        </form>
+              <button class="btn waves-effect waves-light teal darken-2" id="enterUsr" type="submit" name="action">Add User
+              <i class="material-icons right">add_circle_outline</i>
+              </button>
+            </fieldset>
+          </form>
       </div>
-      <!-- end row -->
-      <div class="row">
-        <div class="col m12 l6">
-        <form action="#" onsubmit="userSearch();return false">
-        <fieldset>
-        <legend>User search</legend>
+        <!-- end col -->
 
-          <div class="input-field">
-            <input type="text" id="nameSearch" required>
-            <label for="username">Enter username or click Seach All:</label>
-          </div>
+      <div class="col s12 m6">
+            <form action="#" onsubmit="userSearch();return false">
+              <fieldset>
+                <legend>Search & Update Single User</legend>
 
-          <textarea name="name" rows="8" cols="80" id="textfield"></textarea>
+                <div class="input-field">
+                  <input type="text" id="nameSearch" required>
+                  <label for="username">Enter username *:</label>
+                </div>
 
-          <button class="btn waves-effect waves-light teal darken-2" type="submit" name="search" id="searchBtn">Search
-          <i class="material-icons right">send</i>
+                <div class="input-field">
+                  <input type="email" name="email" id="emailSearch">
+                  <label for="">Enter email:</label>
+                </div>
 
-          <button class="btn waves-effect waves-light teal darken-2" type="button" name="searchAll" id="searchAllBtn">Search All
-          <i class="material-icons right">send</i>
-          </button>
-          </fieldset>
-        </form>
+                <div class="input-field">
+                  <input type="text" name="state" id="stateSearch" maxlength="2">
+                  <label for="">Enter State Abbreviation:</label>
+                </div>
+
+                <button class="btn waves-effect waves-light teal darken-2" type="submit" name="search" id="searchBtn">Search
+                <i class="material-icons right">search</i>
+
+                <button class="btn waves-effect waves-light orange darken-3" type="button" name="searchAll" id="updateBtn">Update
+                <i class="material-icons right">send</i>
+                </button>
+              </fieldset>
+            </form>
       </div>
-      <!-- end row -->
-
-
+      <!-- end col -->
     </div>
-    <!--End pageWrapper div-->
+    <!-- end row -->
+
+    <div class="row">
+      <div class="col s12 m6">
+              <form action="#" onsubmit="deleteUser();return false">
+                <fieldset>
+                  <legend>Delete User</legend>
+
+                    <div class="input-field">
+                    <input type="text" id="usrNameBox" required>
+                    <label for="username">Enter username to delete*:</label>
+
+                    <button class="btn waves-effect waves-light red darken-2" type="submit" name="delete" id="deleteBtn">Delete
+                    <i class="material-icons right">delete_forever</i>
+
+                  </div>
+                </fieldset>
+              </form>
+      </div>
+        <!-- end col <-->
+
+      <div class="col s12 m6">
+              <form action="#">
+                <fieldset>
+                  <legend>Show All Users</legend>
+              <textarea name="name" rows="4" cols="80" id="textfield"></textarea>
+
+              <button class="btn waves-effect waves-light teal darken-2" type="button" name="searchAll" id="searchAllBtn">Show All
+              <i class="material-icons right">send</i>
+              </button>
+              </fieldset>
+            </form>
+      </div>
+          <!-- end col -->
+    </div>
+        <!-- end row -->
+
+
+      </div>
+      <!--End pageWrapper div-->
   </body>
 
   </html>
