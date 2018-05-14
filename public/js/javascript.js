@@ -12,11 +12,11 @@ function submitNewUsr() {
   }
 
   // send over user object
-  fetch("/user/add/", {
+  fetch("/user/add", {
       headers: {
         'content-type': 'application/json'
       },
-      method: 'PUT',
+      method: 'POST',
       body: JSON.stringify(usrObj)
     })
     .then(function(res) {

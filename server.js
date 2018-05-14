@@ -22,6 +22,7 @@ app.get("", function(req, res) {
 //this is the interface to add a new user
 app.post("/user/add", function(req, res) {
   let usrInput = req.body;
+  console.log(usrInput);
   let readArr = fs.readFileSync("./storage.json", "utf8");
   let newArr = JSON.parse(readArr);
 
@@ -83,7 +84,7 @@ app.delete("/user/del/:user", function(req, res) {
   //filter out the existing user object
   let deletedUsr = usrListArrDel.filter(find => find.name !== usrToDel);
 
-  if(usrListArrDel.length === deletedUsr.length){
+  if (usrListArrDel.length === deletedUsr.length) {
     res.send("User not found");
   } else {
     fs.writeFileSync('./storage.json', JSON.stringify(deletedUsr));
